@@ -100,6 +100,9 @@ export default class GameControl {
                 break;
             case " ":
                 this.isStop = !this.isStop;
+                setTimeout(() => {
+                    this.canChangeDir = true;
+                })
                 break;
             default:
                 break;
