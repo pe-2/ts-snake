@@ -73,6 +73,7 @@ export default class GameControl {
 
     //创建一个键盘响应函数
     keydownHandler = (event: KeyboardEvent) => {
+        let direction = this.snake.direction;
         if (!this.canChangeDir) {
             return;
         }
@@ -108,6 +109,10 @@ export default class GameControl {
                 break;
         }
         this.canChangeDir = false;
+        if (this.isStop) {
+            this.canChangeDir = true;
+            this.snake.direction = direction;
+        }
     }
 
 
